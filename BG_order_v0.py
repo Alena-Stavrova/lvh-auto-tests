@@ -52,30 +52,41 @@ def choose_address():
 
 def take_screenshot(name):
     # Helper function to take screenshots for debugging
-    mydir = "C:/Users/astavrova/Desktop/Алена (врем.)/разное/программизм/автоматизация_2.0/find item and add to cart/"
-    if not os.path.exists(mydir + "screenshots"):
-        os.makedirs(mydir + "screenshots")
-    driver.save_screenshot(mydir + "screenshots" / name)
+    # Make sure to replace "\" with "/" in the path
+    path = "C:/Users/astavrova/Desktop/Алена (врем.)/0 - автоматизация/orders/lvh-auto-tests/screenshots/"
+    is_exists = os.path.exists(path)
+    if not is_exists:
+        # Create "screenshots" folder if it doesn't exist
+        os.makedirs(path)
+    driver.save_screenshot(str(path) + name)
 
-    
-take_screenshot("main page.png")
-    
-"""
+
 def extract_price(price_text):
-    Extract numeric price from text
-
+    # Extract numeric price from text
+    try:
+        price_text_clean = re.sub('[^0-9,]', '', price_text)
+        price = float(re.sub(',', '.', price_text_clean))
+        return price
     
     except ValueError:
         return None
+    
 
 def get_total_price():
-    Extract the total price - Basket
-    
-        
+    # Extract the total price - Basket
+    try:
+        basket_price = driver.find_element(By.CLASS_NAME, "cart-panel__result-price").text
+        return(extract_price(basket_price))
+                
     except Exception as e:
         print(f"Error extracting price: {str(e)}")
         return None
 
+driver.get("https://bg.ermenrich.com/")
+time.sleep(10)
+print(get_total_price())
+    
+"""
 def search_for_sku(sku):
     Search for a specific SKU on the website
     try:
