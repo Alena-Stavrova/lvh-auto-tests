@@ -58,7 +58,7 @@ def take_screenshot(name):
     if not is_exists:
         # Create "screenshots" folder if it doesn't exist
         os.makedirs(path)
-    driver.save_screenshot(str(path) + name)
+    driver.save_screenshot(str(path) + name + ".png")
 
 
 def extract_price(price_text):
@@ -71,9 +71,8 @@ def extract_price(price_text):
     except ValueError:
         return None
     
-
 def get_total_price():
-    # Extract the total price - Basket
+    # Finds the total price in the Basket
     try:
         basket_price = driver.find_element(By.CLASS_NAME, "cart-panel__result-price").text
         return(extract_price(basket_price))
@@ -81,22 +80,23 @@ def get_total_price():
     except Exception as e:
         print(f"Error extracting price: {str(e)}")
         return None
-
-driver.get("https://bg.ermenrich.com/")
-time.sleep(10)
-print(get_total_price())
     
-"""
+
 def search_for_sku(sku):
-    Search for a specific SKU on the website
+    # Search for a specific SKU on the website
     try:
-        
+        search_bar = driver.find_element(By.CLASS_NAME, "search__input")
+        search_bar.clear()
+        search_bar.sendKeys(sku)
         
     except Exception as e:
         print(f"Search failed: {str(e)}")
         take_screenshot("search_error")
         return False
 
+search_for_sku(83088)
+
+"""
 def get_offer_id_for_sku(sku):
     Extract the offerId for the product with the given SKU
     try:
