@@ -618,8 +618,8 @@ def fill_order_form():
 def rename_screenshots_folder(order_number):
     # Rename screenshots folder with order number
     try:
-        source = "C:/Users/astavrova/Desktop/Алена (врем.)/0 - автоматизация/orders/lvh-auto-tests/daily/screenshots"
-        dest = f"C:/Users/astavrova/Desktop/Алена (врем.)/0 - автоматизация/orders/lvh-auto-tests/daily/{order_number}"
+        source = "C:/Users/your_folder/screenshots"
+        dest = f"C:/Users/your_folder/{order_number}"
         
         if os.path.exists(source):
             os.rename(source, dest)
