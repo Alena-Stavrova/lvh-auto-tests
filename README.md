@@ -16,16 +16,16 @@ This framework automates critical user flows for a single-brand e-commerce platf
 - **Extensible architecture:** Easy to add new countries or test scenarios
 
 ## 🏗 Project Structure
-lvh-auto-tests/
-├── BG_order_V1.py # Bulgaria website automation
-├── CZ_order_V1.py # Czech Republic website automation
-├── DE_order_V1.py # Germany website automation
-├── ES_order_V1.py # Spain website automation
-├── EU_order_V1.py # European website automation
-├── HU_order_V1.py # Hungary website automation
-├── IT_order_V1.py # Italy website automation
-├── requirements.txt # Dependencies
-└── README.md # This file
+lvh-auto-tests/ <br>
+├── BG_order_V1.py # Bulgaria website automation <br>
+├── CZ_order_V1.py # Czech Republic website automation <br>
+├── DE_order_V1.py # Germany website automation <br>
+├── ES_order_V1.py # Spain website automation <br>
+├── EU_order_V1.py # European website automation <br>
+├── HU_order_V1.py # Hungary website automation <br>
+├── IT_order_V1.py # Italy website automation <br>
+├── requirements.txt # Dependencies <br>
+└── README.md # This file <br>
 
 ## 🛠 Development Approach
 This project represents a **collaborative development effort** where I served as the **technical lead and product owner**. My contributions include:
