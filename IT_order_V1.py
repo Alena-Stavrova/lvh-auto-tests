@@ -703,8 +703,8 @@ def place_order():
             
             # Get the order number
             order_number = get_order_number()
-            source = "C:/Users/astavrova/Desktop/Алена (врем.)/0 - автоматизация/orders/lvh-auto-tests/daily/screenshots"
-            dest = "C:/Users/astavrova/Desktop/Алена (врем.)/0 - автоматизация/orders/lvh-auto-tests/daily/" + order_number
+            source = "C:/Users/your_folder/screenshots"
+            dest = f"C:/Users/your_folder/{order_number}"
             try:
                 os.rename(source, dest)
             except OSError as error:
